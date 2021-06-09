@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>[简历]赖尹钢-Web前端开发</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/typo.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+</head>
+
+<body>
+
+    <header class="header"></header>
+
+    <article class="container">
+        <section class="side" id="side">
+
+            <!-- 个人肖像 -->
+            <section class="me">
+                <section class="portrait">
+                    <div class="loading">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <!-- 头像照片 -->
+                    <img class="avatar" src="./assets/images/avatar.jpg" onload="myloading()">
+                </section>
+
+                <h3 class="name">赖尹钢</h3>
+                <h4 class="info-job">Web前端开发</h4>
+
+            </section>
+
+            <!-- 基本信息 -->
+            <section class="profile info-unit">
+                <h2>
+                    <i class="fa fa-user" aria-hidden="true"></i>基本信息
+                </h2>
+                <hr />
+                <ul>
+                    <li>
+                        <label>个人信息</label>
+                        <span>赖尹钢 / 男 / 21岁</span>
+                    </li>
+                    <li>
+                        <label>英语水平</label>
+                        <span>CET-4</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 联系方式 -->
+            <section class="contact info-unit">
+                <h2>
+                    <i class="fa fa-phone" aria-hidden="true"></i>联系方式
+                </h2>
+                <hr />
+                <ul>
+                    <li>
+                        <label>手机</label>
+                        <a href="tel:18757018850" target="_blank">18757018850</a>
+                    </li>
+                    <li>
+                        <label>邮箱</label>
+                        <a href="mailto:1921243831@qq.com" target="_blank">1921243831@qq.com</a>
+                    </li>
+                    <li>
+                        <label>Gitee</label>
+                        <a href="https://gitee.com/lai_yingang" target="_blank">gitee.com/lai_yingang</a>
+                    </li>
+                </ul>
+            </section>
+
+
+            <section class="qrcode info-unit">
+                <h2><i class="fa fa-qrcode" aria-hidden="true"></i>二维码</h2>
+                <hr />
+                <img src="./assets/images/wx.jpg" style="width: 100%;" alt="">
+            </section>
+        </section>
+
+        <section class="main">
+            <!-- 教育经历 -->
+            <section class="edu info-unit">
+                <h2>
+                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>教育经历
+                </h2>
+                <hr />
+                <ul>
+                    <li>
+                        <h3>
+                            <span>九江学院 - 软件技术专业（专科）</span>
+                            <time>2018.9-2021.7</time>
+                        </h3>
+                        <p>大学期间学习成绩优秀</p>
+                        <ul id="edu">
+                            <li>2018-2019学年获得<a data-index="1" href="javascript:;" title="查看证书">二等奖学金</a>
+                            </li>
+                            <li>2019-2020学年获得<a data-index="2" href="javascript:;" title="查看证书">一等奖学金</a>和
+                                <a data-index="3" href="javascript:;" title="查看证书">三等奖学金</a>，并获得<a data-index="4"
+                                    href="javascript:;" title="查看证书">三好学生</a>称号
+                            </li>
+                            <li>毕业时被评为<a data-index="5" href="javascript:;" title="查看证书">2021届优秀毕业生</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 图片预览 -->
+            <div id="dialogBg">
+                <div class="dialog">
+                    <img src="" alt="">
+                </div>
+            </div>
+            <script>
+                $('#dialogBg').click(function () {
+                    $(this).hide();
+                })
+                $('#edu').click(function (e) {
+                    let certificateID = e.target.getAttribute('data-index');
+                    if (certificateID) {
+                        $('#dialogBg').show();
+                        let imgPath = "./assets/images/" + certificateID + ".jpg";
+                        $('.dialog>img').attr("src", imgPath);
+                    }
+                })
+            </script>
+
+            <!-- 专业技能 -->
+            <section class="skill info-unit">
+                <h2>
+                    <i class="fa fa-code" aria-hidden="true"></i>专业技能
+                </h2>
+                <hr />
+                <ul>
+                    <li>
+                        熟练掌握HTML、CSS和JavaScript等前端技术。
+                    </li>
+                    <li>
+                        熟悉使用jQuery、Layui、Vue.js开发项目。
+                    </li>
+                    <li>了解可视化图表库ECharts</li>
+                    <li>
+                        了解Webpack自动化构建工具
+                    </li>
+                    <li>
+                        了解Java、PHP、python等编程语言的基础语法。
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 工作经历 -->
+            <!-- <section class="work info-unit">
+                <h2>
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>工作经历
+                </h2>
+                <hr />
+                <ul>
+                    <li>
+                        <h3>
+                            <span>XX－Web前端开发（实习）</span>
+                            <time>20XX.10-20XX.7</time>
+                        </h3>
+                        <ul class="info-content">
+                            <li>参与公司主线产品「XXXX」的前端开发工作，完成帖子快捷回复、
+                                <mark>全站图片懒加载</mark>、活动banner、帖子管理（使用Yii框架）等功能。项目采用技术栈phpWind+NAMP。
+                                <a href="javascript:;">
+                                    <i class="fa fa-link" aria-hidden="true"></i>博客文章</a>。
+                            </li>
+                            <li>主要参与公司产品「XXXX」的前端开发工作，实现接入微博、微信、QQ等
+                                <mark>第三方账号登录</mark>等功能。项目采用技术栈WordPress+NAMP。
+                            </li>
+                            <li>活动页面的开发（七夕活动、抽奖活动以及承接外包页面）。</li>
+                            <li>论坛
+                                <mark>图片增量备份</mark>（CentOS+vsftpd+crontab）
+                                <a href="javascript:;">
+                                    <i class="fa fa-link" aria-hidden="true"></i>博客文章</a>。
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section> -->
+
+            <!-- 项目经验 -->
+            <section class="project info-unit">
+                <h2>
+                    <i class="fa fa-terminal" aria-hidden="true"></i>个人项目
+                </h2>
+                <hr />
+                <ul>
+                    <li>
+                        <h3>
+                            <span>Vue电商后台管理系统</span>
+                            <span class="link">
+                                <a href="https://lai_yingang.gitee.io/vue_shop/#/login" target="_blank">Demo</a>
+                            </span>
+                            <time>2021</time>
+                        </h3>
+                        <ul class="info-content">
+                            <li>技术栈：Vue、element-ui、Axios、ECharts</li>
+                            <li>
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                [目标]跟着教学视频完成该系统的前端部分。
+                                <br />
+                                <!-- <i class="fa fa-users" aria-hidden="true"></i>
+                                [团队]同 2 位同专业同学一起
+                                <br /> -->
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                                [贡献]完成从用户管理、角色管理、权限管理、商品管理、订单展示、数据报表等基本功能。
+                                <br />
+                                <!-- <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                [效果]作品最终取得第三届共享杯国家级竞赛“一等奖” （2/2000） -->
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 自我评价 -->
+            <section class="work info-unit">
+                <h2>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>自我评价
+                </h2>
+                <hr />
+                <ul>
+                    <li>计算机基础知识扎实。</li>
+                    <li>学习成绩优秀，自我驱动力强。</li>
+                    <li>喜欢编程，乐于分享，有良好的编程习惯。</li>
+                    <li>对新事物保持好奇心，喜欢钻研。</li>
+                    <li>积极乐观，喜欢迎接挑战。</li>
+                </ul>
+            </section>
+        </section>
+    </article>
+
+
+
+    <footer class="footer">
+        <p>&copy; 2021 赖尹钢的个人简历
+        </p>
+    </footer>
+
+    <!-- 侧栏 -->
+    <aside>
+        <ul>
+            <li>
+                <a href="https://gitee.com/itsay/resume" target="_blank">源代码</a>
+            </li>
+            <li>
+                <a href="https://lai_yingang.gitee.io/blog/#/" target="_blank">Blog</a>
+            </li>
+        </ul>
+    </aside>
+
+
+</body>
+
+</html>
