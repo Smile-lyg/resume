@@ -114,13 +114,13 @@
                         </h3>
                         <p>大学期间学习成绩优秀</p>
                         <ul id="edu">
-                            <li>2018-2019学年获得<a data-index="1" href="javascript:;" title="查看证书">二等奖学金</a>
+                            <li>2018-2019学年获得<a data-index="0" href="javascript:;" title="查看证书">二等奖学金</a>
                             </li>
-                            <li>2019-2020学年获得<a data-index="2" href="javascript:;" title="查看证书">一等奖学金</a>和
-                                <a data-index="3" href="javascript:;" title="查看证书">三等奖学金</a>，并获得<a data-index="4"
+                            <li>2019-2020学年获得<a data-index="1" href="javascript:;" title="查看证书">一等奖学金</a>和
+                                <a data-index="2" href="javascript:;" title="查看证书">三等奖学金</a>，并获得<a data-index="3"
                                     href="javascript:;" title="查看证书">三好学生</a>称号
                             </li>
-                            <li>毕业时被评为<a data-index="5" href="javascript:;" title="查看证书">2021届优秀毕业生</a></li>
+                            <li>毕业时被评为<a data-index="4" href="javascript:;" title="查看证书">2021届优秀毕业生</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -129,10 +129,35 @@
             <!-- 图片预览 -->
             <div id="dialogBg">
                 <div class="dialog">
-                    <img src="" alt="">
+                    <!-- <img src="" alt=""> -->
                 </div>
             </div>
             <script>
+                let picObj = {
+                    er: './assets/images/1.jpg',
+                    yi: './assets/images/2.jpg',
+                    san: './assets/images/3.jpg',
+                    hao: './assets/images/4.jpg',
+                    bys: './assets/images/5.jpg',
+                }
+                let imgs = [];
+                let num = 0;
+                for (let i in picObj) {
+                    var img = new Image();
+                    img.src = picObj[i];
+                    imgs.push(img);
+                    img.onload = function () {
+                        num++;
+                        if (num === Object.keys(picObj).length) {
+                            console.log('所有图片加载完成。')
+                        }
+                    }
+                }
+                let dialog = $('.dialog')
+                // 将图片元素加入页面元素中
+                imgs.forEach(v => dialog.append(v))
+                // let pics = $('.dialog>img')
+                // 显示背景遮罩
                 $('#dialogBg').click(function () {
                     $(this).hide();
                 })
@@ -140,8 +165,10 @@
                     let certificateID = e.target.getAttribute('data-index');
                     if (certificateID) {
                         $('#dialogBg').show();
-                        let imgPath = "./assets/images/" + certificateID + ".jpg";
-                        $('.dialog>img').attr("src", imgPath);
+                        $('.dialog>img').eq(certificateID).show().siblings().hide();
+                        // let imgPath = "./assets/images/" + certificateID + ".jpg";
+                        // $('.dialog>img').attr("src", imgPath);
+
                     }
                 })
             </script>
@@ -159,9 +186,10 @@
                     <li>
                         熟悉使用jQuery、Layui、Vue.js开发项目。
                     </li>
-                    <li>了解可视化图表库ECharts</li>
+                    <!-- <li>了解可视化图表库ECharts</li> -->
+                    <li>熟悉ES6基本语法。</li>
                     <li>
-                        了解Webpack自动化构建工具
+                        了解Babel、Webpack等前端工程化工具。
                     </li>
                     <li>
                         了解Java、PHP、python等编程语言的基础语法。
@@ -267,7 +295,7 @@
                 <a href="https://github.com/Smile-lyg/resume" target="_blank">源代码</a>
             </li>
             <li>
-                <a href="https://lai_yingang.gitee.io/blog/#/" target="_blank">Blog</a>
+                <a href="https://smile-lyg.github.io/blog/#/" target="_blank">Blog</a>
             </li>
         </ul>
     </aside>
