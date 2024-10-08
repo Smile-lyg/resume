@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /* -------------------------------------------------
  * 公共部分
  * ------------------------------------------------- */
@@ -10,21 +9,17 @@ body {
   padding: 1rem 10%;
   padding-bottom: 0;
   box-sizing: border-box;
-  font-size: .9em;
+  font-size: 0.9em;
 }
-
 body .fa {
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
-
 body .info-unit {
   margin-bottom: 1rem;
 }
-
 body .info-unit h2 {
   font-weight: 700;
 }
-
 body .info-unit h3 {
   font-weight: 300;
 }
@@ -48,12 +43,13 @@ body .info-unit h3 {
   box-sizing: border-box;
   padding: 1rem;
 }
-
 .container .side .me {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
-
+.container .side .me h3, .container .side .me h4 {
+  font-weight: 300;
+}
 .container .side .me .portrait {
   margin: 0 auto;
   margin-bottom: 1rem;
@@ -62,7 +58,6 @@ body .info-unit h3 {
   overflow: hidden;
   position: relative;
 }
-
 .container .side .me .portrait .loading {
   position: absolute;
   top: 50%;
@@ -71,7 +66,6 @@ body .info-unit h3 {
   height: 4rem;
   margin: 0 auto;
 }
-
 .container .side .me .portrait .loading span {
   display: inline-block;
   width: 8px;
@@ -80,73 +74,54 @@ body .info-unit h3 {
   background: lightgreen;
   -webkit-animation: load 1s ease infinite;
 }
-
-@-webkit-keyframes load {
-
-  0%,
-  100% {
+@keyframes load {
+  0%, 100% {
     height: 3rem;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     background: lightblue;
   }
-
   50% {
     height: 1rem;
     margin: 1.5rem 0;
     background: lightgreen;
   }
 }
-
-@keyframes {
-
-  0%,
-  100% {
-    height: 3rem;
-    margin: .5rem 0;
-    background: lightblue;
-  }
-
-  50% {
-    height: 1rem;
-    margin: 1.5rem 0;
-    background: lightgreen;
-  }
-}
-
 .container .side .me .portrait .loading span:nth-child(2) {
   -webkit-animation-delay: 0.2s;
 }
-
 .container .side .me .portrait .loading span:nth-child(3) {
   -webkit-animation-delay: 0.4s;
 }
-
 .container .side .me .portrait .loading span:nth-child(4) {
   -webkit-animation-delay: 0.6s;
 }
-
 .container .side .me .portrait .loading span:nth-child(5) {
   -webkit-animation-delay: 0.8s;
 }
-
 .container .side .me .portrait img {
   display: none;
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-
+.container .side .me .portrait img:hover {
+  transform: rotate(666turn);
+  transition-delay: 1s;
+  transition-property: all;
+  transition-duration: 59s;
+  transition-timing-function: cubic-bezier(0.34, 0, 0.84, 1);
+}
 .container .side .info-unit ul li label {
   display: inline-block;
   width: 35%;
 }
-
 .container .side .info-unit ul li span {
   display: inline-block;
   vertical-align: top;
   width: 60%;
 }
-
 .container .main {
   position: relative;
   margin-left: 22rem;
@@ -156,37 +131,30 @@ body .info-unit h3 {
   box-sizing: border-box;
   padding: 1rem;
 }
-
 .container .main .info-unit ul {
   box-sizing: border-box;
   padding-left: 1.2rem;
   padding-right: 0.8rem;
 }
-
 .container .main .info-unit ul li {
   margin-bottom: 1rem;
   list-style: disc;
 }
-
 .container .main .info-unit ul li h3 .link {
-  font-size: .5rem;
+  font-size: 0.5rem;
   border: 1px solid #4db6ac;
   padding: 1px 3px;
-  -webkit-border-radius: 5px;
   border-radius: 5px;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
-
 .container .main .info-unit ul li h3 time {
   text-align: right;
   float: right;
 }
-
 .container .main .info-unit ul li .info-content li {
   list-style: circle;
   margin: 0;
 }
-
 .container .main .info-unit ul li .info-content .fa {
   font-size: 1em;
 }
@@ -199,7 +167,6 @@ body .info-unit h3 {
   margin-top: 1rem;
   height: 2rem;
 }
-
 .footer p {
   line-height: 2rem;
   text-align: center;
@@ -215,7 +182,7 @@ body .info-unit h3 {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, 0.3);
   display: none;
 }
 
@@ -228,10 +195,11 @@ body .info-unit h3 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.dialog img {
+.dialog .certImg {
   width: 100%;
   height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .fa {
@@ -247,7 +215,7 @@ h3 {
 }
 
 hr {
-  margin-bottom: .4em;
+  margin-bottom: 0.4em;
 }
 
 aside {
@@ -256,16 +224,12 @@ aside {
   top: 30%;
   z-index: 2;
 }
-
 aside ul li {
   margin-bottom: 10px;
-  -webkit-border-radius: 10px 0 0 10px;
   border-radius: 19px 0 0 10px;
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   background: #1abc9c;
 }
-
 aside ul li a {
   display: inline-block;
   width: 80px;
@@ -310,42 +274,34 @@ mark {
   .container .info-unit h3 span {
     display: block;
   }
-
   .container .info-unit h3 span.link {
     display: inline;
   }
-
   .container .project h3 span {
     display: inline;
   }
-
   .container .project h3 time {
     display: block;
   }
-
   .container .main .info-unit ul li h3 time {
     float: none;
     text-align: left;
   }
 }
-
 @media screen and (max-width: 1034px) {
   body {
     padding: 1rem 3%;
   }
 }
-
 @media screen and (max-width: 750px) {
   .dialog {
     width: 100%;
   }
-
   .container .side {
     position: static;
     width: 95%;
     margin: 0 auto;
   }
-
   .container .main {
     position: static;
     margin-left: 0;
@@ -353,7 +309,6 @@ mark {
     margin: 0 auto;
     margin-top: 1.5rem;
   }
-
   #nav-m {
     display: none;
     position: fixed;
@@ -364,15 +319,11 @@ mark {
     box-shadow: 0 5px 20px #bbb;
     border-radius: 50%;
   }
-
   #nav-m svg {
     width: 28px;
     height: 28px;
   }
-
   aside {
     display: none;
   }
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

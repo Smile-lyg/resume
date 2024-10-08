@@ -16,7 +16,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>[简历]赖尹钢-Web前端开发</title>
+    <title>[简历]赖尹钢-前端工程师</title>
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/typo.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -47,7 +47,7 @@
                 </section>
 
                 <h3 class="name">赖尹钢</h3>
-                <h4 class="info-job">Web前端开发</h4>
+                <h4 class="info-job">前端工程师</h4>
 
             </section>
 
@@ -60,11 +60,15 @@
                 <ul>
                     <li>
                         <label>个人信息</label>
-                        <span>赖尹钢 / 男 / 21岁</span>
+                        <span>赖尹钢 / 男 / 24岁</span>
                     </li>
                     <li>
                         <label>英语水平</label>
                         <span>CET-4</span>
+                    </li>
+                    <li>
+                        <label>计算机水平</label>
+                        <span>三级网络技术</span>
                     </li>
                 </ul>
             </section>
@@ -77,23 +81,27 @@
                 <hr />
                 <ul>
                     <li>
-                        <label>手机</label>
+                        <label>电话</label>
                         <a href="tel:18757018850" target="_blank">18757018850</a>
                     </li>
                     <li>
                         <label>邮箱</label>
-                        <a href="mailto:1921243831@qq.com" target="_blank">1921243831@qq.com</a>
+                        <a href="mailto:18757018850@163.com" target="_blank">18757018850@163.com</a>
                     </li>
                     <li>
                         <label>Gitee</label>
                         <a href="https://gitee.com/lai_yingang" target="_blank">gitee.com/lai_yingang</a>
                     </li>
+                    <!-- <li>
+                        <label>Github</label>
+                        <a href="https://github.com/Smile-lyg" target="_blank">github.com/Smile-lyg</a>
+                    </li> -->
                 </ul>
             </section>
 
 
             <section class="qrcode info-unit">
-                <h2><i class="fa fa-qrcode" aria-hidden="true"></i>二维码</h2>
+                <h2><i class="fa fa-qrcode" aria-hidden="true"></i>微信二维码</h2>
                 <hr />
                 <img src="./assets/images/wx.jpg" style="width: 100%;" alt="">
             </section>
@@ -109,19 +117,12 @@
                 <ul>
                     <li>
                         <h3>
-                            <span>九江学院 - 软件技术专业（专科）</span>
-                            <time>2018.9-2021.7</time>
+                            <span>九江学院 - 软件工程（本科）</span>
+                            <time>2019.9-2023.7</time>
                         </h3>
-                        <p>大学期间学习成绩优秀</p>
-                        <ul id="edu">
-                            <li>2018-2019学年获得<a data-index="0" href="javascript:;" title="查看证书">二等奖学金</a>
-                            </li>
-                            <li>2019-2020学年获得<a data-index="1" href="javascript:;" title="查看证书">一等奖学金</a>和
-                                <a data-index="2" href="javascript:;" title="查看证书">三等奖学金</a>，并获得<a data-index="3"
-                                    href="javascript:;" title="查看证书">三好学生</a>称号
-                            </li>
-                            <li>毕业时被评为<a data-index="4" href="javascript:;" title="查看证书">2021届优秀毕业生</a></li>
-                        </ul>
+                        <p>大学期间学习成绩优秀，多次获得<a href="javascript:showPic('2');" title="查看证书">奖学金</a>，通过<a href="javascript:showPic('cet4');" title="查看证书">英语四级</a>、计算机等级考试<a href="javascript:showPic('neea3');" title="查看证书">三级网络技术</a>
+                        </p>
+                        
                     </li>
                 </ul>
             </section>
@@ -129,49 +130,10 @@
             <!-- 图片预览 -->
             <div id="dialogBg">
                 <div class="dialog">
-                    <!-- <img src="" alt=""> -->
+                    <img class="certImg" src="" alt="">
                 </div>
             </div>
-            <script>
-                let picObj = {
-                    er: './assets/images/1.jpg',
-                    yi: './assets/images/2.jpg',
-                    san: './assets/images/3.jpg',
-                    hao: './assets/images/4.jpg',
-                    bys: './assets/images/5.jpg',
-                }
-                let imgs = [];
-                let num = 0;
-                for (let i in picObj) {
-                    var img = new Image();
-                    img.src = picObj[i];
-                    imgs.push(img);
-                    img.onload = function () {
-                        num++;
-                        if (num === Object.keys(picObj).length) {
-                            console.log('所有图片加载完成。')
-                        }
-                    }
-                }
-                let dialog = $('.dialog')
-                // 将图片元素加入页面元素中
-                imgs.forEach(v => dialog.append(v))
-                // let pics = $('.dialog>img')
-                // 显示背景遮罩
-                $('#dialogBg').click(function () {
-                    $(this).hide();
-                })
-                $('#edu').click(function (e) {
-                    let certificateID = e.target.getAttribute('data-index');
-                    if (certificateID) {
-                        $('#dialogBg').show();
-                        $('.dialog>img').eq(certificateID).show().siblings().hide();
-                        // let imgPath = "./assets/images/" + certificateID + ".jpg";
-                        // $('.dialog>img').attr("src", imgPath);
-
-                    }
-                })
-            </script>
+            
 
             <!-- 专业技能 -->
             <section class="skill info-unit">
@@ -181,24 +143,26 @@
                 <hr />
                 <ul>
                     <li>
-                        熟练掌握HTML、CSS和JavaScript等前端技术。
+                        熟练HTML、CSS、JavaScript。熟悉ES6+规范。
                     </li>
                     <li>
-                        熟悉使用jQuery、Layui、Vue.js开发项目。
+                        熟练前端框架Vue.js、uni-app等。
                     </li>
                     <!-- <li>了解可视化图表库ECharts</li> -->
-                    <li>熟悉ES6基本语法。</li>
+                    <li>熟悉前端性能优化、跨浏览器兼容处理等技术。</li>
                     <li>
-                        了解Babel、Webpack等前端工程化工具。
+                        熟练使用前端构建工具、版本控制工具和调试工具。
                     </li>
                     <li>
-                        了解Java、PHP、python等编程语言的基础语法。
+                        熟悉Node.js，使用koa框架，配合ORM工具Sequlize操作MySQL数据库，进行服务端接口开发。
                     </li>
+                    <li>了解Java，会使用Spring+SpringMVC+MyBatis进行简单服务端接口开发。</li>
+                    <li>了解Linux系统基本操作命令。了解nginx配置，部署前端项目，配置代理转发。</li>
                 </ul>
             </section>
 
             <!-- 工作经历 -->
-            <!-- <section class="work info-unit">
+            <section class="work info-unit">
                 <h2>
                     <i class="fa fa-shopping-bag" aria-hidden="true"></i>工作经历
                 </h2>
@@ -206,58 +170,127 @@
                 <ul>
                     <li>
                         <h3>
-                            <span>XX－Web前端开发（实习）</span>
-                            <time>20XX.10-20XX.7</time>
+                            <span>武汉超星数图教育科技有限公司－Web前端开发工程师</span>
+                            <time>2023.4-2024.8</time>
                         </h3>
                         <ul class="info-content">
-                            <li>参与公司主线产品「XXXX」的前端开发工作，完成帖子快捷回复、
-                                <mark>全站图片懒加载</mark>、活动banner、帖子管理（使用Yii框架）等功能。项目采用技术栈phpWind+NAMP。
-                                <a href="javascript:;">
-                                    <i class="fa fa-link" aria-hidden="true"></i>博客文章</a>。
-                            </li>
-                            <li>主要参与公司产品「XXXX」的前端开发工作，实现接入微博、微信、QQ等
-                                <mark>第三方账号登录</mark>等功能。项目采用技术栈WordPress+NAMP。
-                            </li>
-                            <li>活动页面的开发（七夕活动、抽奖活动以及承接外包页面）。</li>
-                            <li>论坛
-                                <mark>图片增量备份</mark>（CentOS+vsftpd+crontab）
-                                <a href="javascript:;">
-                                    <i class="fa fa-link" aria-hidden="true"></i>博客文章</a>。
-                            </li>
+                            <li>参与学习通生态相关产品前端部分的开发与维护</li>
+                            <li>参与超星综合教学管理系统的开发与维护。</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span>九江威斯特信息技术有限公司－Web前端开发（实习）</span>
+                            <time>2022.3-2023.4</time>
+                        </h3>
+                        <ul class="info-content">
+                            <li>负责中后台管理系统前端部分的开发与维护</li>
+                            <li>使用uni-app开发移动端应用程序、微信小程序、H5网站等。</li>
                         </ul>
                     </li>
                 </ul>
-            </section> -->
+            </section>
 
             <!-- 项目经验 -->
             <section class="project info-unit">
                 <h2>
-                    <i class="fa fa-terminal" aria-hidden="true"></i>个人项目
+                    <i class="fa fa-terminal" aria-hidden="true"></i>项目经验
                 </h2>
                 <hr />
                 <ul>
                     <li>
                         <h3>
-                            <span>Vue电商后台管理系统</span>
-                            <span class="link">
-                                <a href="https://lai_yingang.gitee.io/vue_shop/#/login" target="_blank">Demo</a>
-                            </span>
-                            <time>2021</time>
+                            <span>超星综合教学管理系统</span>
+                            <time>2023.9-2024.8</time>
                         </h3>
                         <ul class="info-content">
-                            <li>技术栈：Vue、element-ui、Axios、ECharts</li>
+                            <li>技术栈：Vite + Vue + TypeScript + Pinia + Vue Router + UnoCSS + Element Plus + Vxe Table + Vue I18n + ECharts + Axios等</li>
                             <li>
                                 <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-                                [目标]跟着教学视频完成该系统的前端部分。
+                                负责学籍管理、师资管理、基础数据、考务管理、培养过程、德智体美劳、毕业管理、毕业论文、审批流、工作量管理等模块开发与维护。
                                 <br />
-                                <!-- <i class="fa fa-users" aria-hidden="true"></i>
-                                [团队]同 2 位同专业同学一起
-                                <br /> -->
-                                <i class="fa fa-bars" aria-hidden="true"></i>
-                                [贡献]完成从用户管理、角色管理、权限管理、商品管理、订单展示、数据报表等基本功能。
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                参与封装如多选下拉框、输入框、标签页、上传组件等等适配业务的教务组件库开发。
                                 <br />
-                                <!-- <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                                [效果]作品最终取得第三届共享杯国家级竞赛“一等奖” （2/2000） -->
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span>知识挑战</span>
+                            <time>2023.8</time>
+                        </h3>
+                        <ul class="info-content">
+                            <li>技术栈：webpack + Vue + Vuex + Vue Router + Vant + Vue I18n + WebSocket + Axios等</li>
+                            <li>
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                项目需要支持多套定制的节日样式主题换肤，对前端部分使用新框架重构，便于后续维护。
+                                负责将项目的前端部分由JSP + jQuery迁移到vue框架，重写页面与样式。将定制的样式抽离为使用css变量，通过和ui设计师沟通结合Design Token输出每套主题样式相关的token.json。使用style-dictionary解析json文件，生成对应的css变量来实现多套主题的换肤。
+                                <br />
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                使用WebSocket实现双人联机对战答题。
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span>知视频</span>
+                            <time>2023.6</time>
+                        </h3>
+                        <ul class="info-content">
+                            <li>技术栈：jQuery + Vue + Axios等</li>
+                            <li>
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                负责活动管理模块开发，使用vue-cropper插件对活动宣传图进行裁剪操作。
+                                <br />
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                对移动端页面优化适配刘海屏、灵动岛。
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span>小组统计后台</span>
+                            <time>2023.5</time>
+                        </h3>
+                        <ul class="info-content">
+                            <li>技术栈：Vite + Vue + Vue Router + Element Plus + ECharts + Axios等</li>
+                            <li>
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                负责小组热度统计、小组详情、小组推荐等页面的开发。
+                                <br />
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span>学习通小组</span>
+                            <time>2023.4-2023.6</time>
+                        </h3>
+                        <ul class="info-content">
+                            <li>技术栈：JSP + jQuery + Vue + Vant + VueI18n等</li>
+                            <li>
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                参与H5端小组，小组列表、小组管理、小组内容详情、小组评论等相关页面的开发与维护。
+                                <br />
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                参与小组项目的国际化、镜像化改造。
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span>五柳安智</span>
+                            <time>2023.2-2023-4</time>
+                        </h3>
+                        <ul class="info-content">
+                            <li>技术栈：uni-app + uni-ui + color-ui + uview-ui + vuex等</li>
+                            <li>
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                负责对接安全帽低功耗蓝牙(BLE)配件实现数据交互，轮询设备佩戴状态，实现工作状态监管。定时上报设备定位以及日志。
+                                <br />
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                管理后台使用vue-element-admin框架进行快速开发。
                             </li>
                         </ul>
                     </li>
@@ -271,11 +304,9 @@
                 </h2>
                 <hr />
                 <ul>
-                    <li>计算机基础知识扎实。</li>
-                    <li>学习成绩优秀，自我驱动力强。</li>
-                    <li>喜欢编程，乐于分享，有良好的编程习惯。</li>
-                    <li>对新事物保持好奇心，喜欢钻研。</li>
-                    <li>积极乐观，喜欢迎接挑战。</li>
+                    <li>工作积极认真，细心负责，编写代码注重格式规范，拥有良好的团队协作精神。</li>
+                    <li>热爱前端技术，喜欢学习行业所需的新技术、学习动手能力强。</li>
+                    <li>个人博客地址：<a href="https://smile-lyg.github.io/blog/#/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i>博客文章</a> </li>
                 </ul>
             </section>
         </section>
@@ -284,12 +315,11 @@
 
 
     <footer class="footer">
-        <p>&copy; 2021 赖尹钢的个人简历
-        </p>
+        <p>&copy; 2024 赖尹钢的个人简历</p>
     </footer>
 
     <!-- 侧栏 -->
-    <aside>
+    <!-- <aside>
         <ul>
             <li>
                 <a href="https://github.com/Smile-lyg/resume" target="_blank">源代码</a>
@@ -298,7 +328,7 @@
                 <a href="https://smile-lyg.github.io/blog/#/" target="_blank">Blog</a>
             </li>
         </ul>
-    </aside>
+    </aside> -->
 
 
 </body>
